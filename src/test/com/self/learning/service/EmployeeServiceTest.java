@@ -38,9 +38,10 @@ public class EmployeeServiceTest {
 
     @Test
     public void testGeneratorMapper() {
-        Employee employee = new Employee();
-        employee.setLastName("weizhiming");
-        List<Employee> employees = employeeMapper.select(employee);
+        List<Employee> employees = employeeMapper.selectByExample(null);
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
         System.out.println(employees);
     }
 

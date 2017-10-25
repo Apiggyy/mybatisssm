@@ -213,11 +213,11 @@
                         <version>${mybatis.generator.version}</version>
                     </dependency>
 
-                    <dependency>
-                        <groupId>tk.mybatis</groupId>
-                        <artifactId>mapper</artifactId>
-                        <version>${mapper.version}</version>
-                    </dependency>
+                    <!--<dependency>-->
+                        <!--<groupId>tk.mybatis</groupId>-->
+                        <!--<artifactId>mapper</artifactId>-->
+                        <!--<version>${mapper.version}</version>-->
+                    <!--</dependency>-->
                 </dependencies>
 
                 <!-- <executions> <execution> <id>Generate MyBatis Artifacts</id> <goals> <goal>generate</goal> </goals> </execution>
