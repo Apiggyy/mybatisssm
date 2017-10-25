@@ -1,6 +1,7 @@
 package com.self.learning.service;
 
 import com.self.learning.entity.Employee;
+import com.self.learning.mapper.EmployeeMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class EmployeeServiceTest {
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private EmployeeMapper employeeMapper;
+
     @Test
     public void findEmployees() throws Exception {
         List<Employee> employees = employeeService.findEmployees();
@@ -30,6 +34,14 @@ public class EmployeeServiceTest {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
+    }
+
+    @Test
+    public void testGeneratorMapper() {
+        Employee employee = new Employee();
+        employee.setLastName("weizhiming");
+        List<Employee> employees = employeeMapper.select(employee);
+        System.out.println(employees);
     }
 
 }

@@ -11,6 +11,10 @@
 
     <context id="default" targetRuntime="MyBatis3">
 
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+        </plugin>
+
         <!-- optional，旨在创建class时，对注释进行控制 -->
         <commentGenerator>
             <property name="suppressDate" value="true" />
@@ -89,8 +93,16 @@
 
 
 
-        <table tableName="tbl_employee" domainObjectName="Employee"/>
-        <table tableName="tbl_department" domainObjectName="Department"/>
+        <!--<table tableName="tbl_employee" domainObjectName="Employee"/>-->
+        <!--<table tableName="tbl_department" domainObjectName="Department"/>-->
+
+        <table tableName="tbl_employee" domainObjectName="Employee">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <table tableName="tbl_department" domainObjectName="Department">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
 
         <!-- optional   , only for mybatis3 runtime
                  自动生成的键值（identity,或者序列值）
